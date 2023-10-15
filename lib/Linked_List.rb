@@ -29,15 +29,33 @@ class LinkedList
 
   # The method below returns the count of node elements in the linked list.
   def count
-  
+    if @head == nil
+      count = 0
+    else
+      count = 1
+      current_item = @head
+      while current_item.next_node != nil
+        current_item = current_item.next_node
+        count += 1
+      end
+    end
+    count
   end
 
   # The method below returns a string of node elements in the linked list.
   def to_string
-    string_length = list.count
-    string_length.times do
-      @node.data # return the data (text) for the given node
+    list_string = ""
+    current_item = @head
+    if @head == nil
+      return list_string
+    else
+      while current_item.next_node != nil
+        list_string << current_item.data
+        current_item = current_item.next_node
+      end
+      list_string << current_item.data
     end
+    list_string
   end
 
 end

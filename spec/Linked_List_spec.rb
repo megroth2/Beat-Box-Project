@@ -49,19 +49,18 @@ RSpec.describe LinkedList do
     expect(list.head.next_node..next_node.next_node).to eq(nil)
   end
 
-
-## *****commmit "add appends method to the Linked List class and spec"
-
-
-  xit 'counts how many nodes are in the list' do
-    expect(@list.count).to eq(1)
+  it 'counts how many nodes are in the list' do
+    list = LinkedList.new
+    list.append("doop")
+    
+    expect(list.count).to eq(1)
   end
 
-  xit 'generates a string of elements in the list' do
+  it 'generates a string of elements in the list' do
     list = LinkedList.new
     list.append("doop")
 
-    expect(@list.to_string).to eq("doop")
+    expect(list.to_string).to eq("doop")
   end
 
 end
