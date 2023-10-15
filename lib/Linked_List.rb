@@ -53,7 +53,7 @@ class LinkedList
         list_string << current_item.data
         current_item = current_item.next_node
       end
-      list_string << current_item.data
+      list_string << " " << current_item.data
     end
     list_string
   end

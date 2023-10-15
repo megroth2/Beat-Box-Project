@@ -29,38 +29,40 @@ RSpec.describe LinkedList do
   end
 
   # The test below verifies that when the appends method is called on a linked list object, where head is not nil, it creates a new node and appends it to the linked list.
-  xit 'appends a node to list as the next node' do
+  it 'appends a node to list as the next node' do
     list = LinkedList.new
     list.append("doop")
-    list.append("plop")
+    list.append("deep")
 
-    expect(list.head.next_node.data).to eq("plop")
+    expect(list.head.next_node.data).to eq("deep")
     expect(list.head.next_node.next_node).to eq(nil)
   end
 
    # The test below verifies that when the appends method is called on a linked list object, where head and next node is not nil, it creates a new node and appends it to the linked list.
-   xit 'appends a different node to list as the next node' do
+   it 'appends a different node to list as the next node' do
     list = LinkedList.new
     list.append("doop")
-    list.append("plop")
+    list.append("deep")
     list.append("pop")
 
     expect(list.head.next_node.next_node.data).to eq("pop")
-    expect(list.head.next_node..next_node.next_node).to eq(nil)
+    expect(list.head.next_node.next_node.next_node).to eq(nil)
   end
 
   it 'counts how many nodes are in the list' do
     list = LinkedList.new
     list.append("doop")
+    list.append("deep")
     
-    expect(list.count).to eq(1)
+    expect(list.count).to eq(2)
   end
 
   it 'generates a string of elements in the list' do
     list = LinkedList.new
     list.append("doop")
+    list.append("deep")
 
-    expect(list.to_string).to eq("doop")
+    expect(list.to_string).to eq("doop deep")
   end
 
 end
