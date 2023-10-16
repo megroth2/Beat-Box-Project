@@ -35,8 +35,8 @@ class LinkedList
       count = 1
       current_item = @head
       while current_item.next_node != nil
-        current_item = current_item.next_node
         count += 1
+        current_item = current_item.next_node
       end
     end
     count
@@ -50,12 +50,24 @@ class LinkedList
       return list_string
     else
       while current_item.next_node != nil
-        list_string << current_item.data
+        list_string << " " << current_item.data
         current_item = current_item.next_node
       end
       list_string << " " << current_item.data
     end
-    list_string
+    list_string.strip
+  end
+  
+  # The method below creates a new node and adds it to the beginning of the linked list.
+  def prepend(data)
+    current_head = @head
+    if @head == nil
+      @head = Node.new(data)
+    else
+      current_head = Node.new(data)
+      current_head.next_node = @head
+      @head = current_head
+    end
   end
 
 end
