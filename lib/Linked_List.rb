@@ -70,4 +70,27 @@ class LinkedList
     end
   end
 
+  # The method below creates a new node and inserts it into the given position
+  def insert(position,data)
+    if @head == nil && position != 0
+      "The linked list is too short for you to insert a node to this position."
+    elsif @head == nil && position == 0
+      @head = Node.new(data)
+    elsif @head != nil && position == 0
+      old_head = @head
+      @head = Node.new(data)
+      @head.next_node = old_head
+    else
+      current_position = 1
+      current_item = @head
+      while current_position != position
+        current_position += 1
+        current_item = current_item.next_node
+      end
+      node_to_be_replaced = current_item.next_node
+      current_item.next_node = Node.new(data)
+      current_item.next_node.next_node = node_to_be_replaced
+    end
+  end
+
 end
