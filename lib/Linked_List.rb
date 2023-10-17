@@ -132,7 +132,16 @@ class LinkedList
 
   # The method below removes the last node from the list and returns it.
   def pop
-  
+    if @head != nil 
+      current_item = @head
+      prior_item = nil
+      while current_item.next_node != nil
+        prior_item = current_item
+        current_item = current_item.next_node
+      end
+      prior_item.next_node = nil
+      current_item.data
+    end
   end
 
 end
