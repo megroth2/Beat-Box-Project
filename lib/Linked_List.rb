@@ -105,18 +105,12 @@ class LinkedList
         current_position += 1
         current_item = current_item.next_node
       end
-      return_string = current_item.data
+      number_of_elements.times do
+      return_string << " " << current_item.data
+      current_item = current_item.next_node
+      end
+    return_string.strip
     end
   end
-
-# current_position = 0
-# loop do
-#   current_position += 1
-#   if current_position == start_position
-#     break
-#   end
-
-def pop
-end
 
 end
