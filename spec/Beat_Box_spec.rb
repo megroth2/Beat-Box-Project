@@ -18,14 +18,7 @@ RSpec.describe Beat_Box do
   it 'has a list' do
     bb = Beat_Box.new
   
-  expect(bb.list.to_string).to eq()
-  end
-
-  it 'has head' do
-    node = Node.new("plop")
-    list = LinkedList.new
-
-    expect(list.head).to eq(nil)
+    expect(bb.list.head).to eq(nil)
   end
 
 # The play method is not tested.
