@@ -118,4 +118,6 @@ RSpec.describe LinkedList do
     expect(list.find(1,3)).to eq("woo shi shu")
   end
 
+  it ''
+
 end

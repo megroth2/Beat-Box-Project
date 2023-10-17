@@ -116,4 +116,7 @@ class LinkedList
 #     break
 #   end
 
+def pop
+end
+
 end
