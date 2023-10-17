@@ -139,4 +139,14 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
   end
 
+  # The test below verifies that calling the pop method removes the last element from the list and returns it
+  it 'pops the last item in the list' do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+  
+    expect(list.pop).to eq("woo")
+    expect(list.to_string).to eq("deep")
+  end
+
 end
