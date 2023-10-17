@@ -9,6 +9,10 @@ class Beat_Box
     @list = LinkedList.new
   end
 
+  def append(beats)
+
+  end
+
   def play
     # say -r 500 @list.to_string
   end
