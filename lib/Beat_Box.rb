@@ -4,14 +4,13 @@ require './lib/linked_list'
 
 class Beat_Box
   attr_reader :list
-  attr_accessor
 
   def initialize
     @list = LinkedList.new
   end
 
   def play
-
+    # say -r 500 @list.to_string
   end
 
 end
