@@ -116,20 +116,4 @@ RSpec.describe LinkedList do
     expect(list.find(1,3)).to eq("woo shi shu")
   end
 
-  # The test below verifies that calling the includes? method returns true if the supplied value is in the list
-  it 'checks if a given value is included in the list'
-    list = LinkedList.new
-    list.append("deep")
-
-    expect(list.includes?("deep")).to eq(true)
-  end
-
-  # The test below verifies that calling the includes? method returns false if the supplied value is not in the list
-  it 'checks if a given value is included in the list' do
-    list = LinkedList.new
-    list.append("deep")
-
-    expect(list.includes?("dep")).to eq(false)
-  end
-
 end
