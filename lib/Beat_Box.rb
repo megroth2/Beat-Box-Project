@@ -2,7 +2,7 @@ require 'pry'
 require './lib/node'
 require './lib/linked_list'
 
-class Beat_Box
+class BeatBox
   attr_reader :list
 
   def initialize
