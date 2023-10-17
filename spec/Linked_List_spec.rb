@@ -124,7 +124,7 @@ RSpec.describe LinkedList do
   end
 
   # The test below verifies that calling the includes? method returns true if the supplied value is in the list
-  it 'checks if a given value is included in the list'
+  it 'checks if a given value is included in the list' do
     list = LinkedList.new
     list.append("deep")
 

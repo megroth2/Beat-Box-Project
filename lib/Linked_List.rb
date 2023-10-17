@@ -97,7 +97,7 @@ class LinkedList
   def find(start_position,number_of_elements)
     return_string = ""
     if @head == nil
-      "This linked list has no nodes"
+      "This linked list is empty"
     else
       current_position = 0
       current_item = @head
@@ -111,6 +111,28 @@ class LinkedList
       end
     return_string.strip
     end
+  end
+
+  # The method below checks if a given text value is included in a list and returns true or false
+  def includes?(text)
+    if @head == nil
+      false
+    elsif @head.next_node == nil && @head.data != text
+      false
+    elsif
+      current_item = @head
+      while current_item.data != text
+        current_item = current_item.next_node
+      end
+      true
+    else
+      false
+    end
+  end
+
+  # The method below removes the last node from the list and returns it.
+  def pop
+  
   end
 
 end
