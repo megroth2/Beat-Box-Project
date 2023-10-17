@@ -94,4 +94,28 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("dop plop boo suu")
   end
 
+  it 'finds and returns a number of elements based on the given start position' do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+  
+    expect(list.find(2,1)).to eq("shi")
+  end
+
+  it 'finds and returns a different number of elements based on a different start position' do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+
+    # binding.pry
+  
+    expect(list.find(1,3)).to eq("woo shi shu")
+  end
+
 end

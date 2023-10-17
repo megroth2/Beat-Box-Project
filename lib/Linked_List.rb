@@ -93,4 +93,27 @@ class LinkedList
     end
   end
 
+  # The method below returns a number of elements based on the given start position.
+  def find(start_position,number_of_elements)
+    return_string = ""
+    if @head == nil
+      "This linked list has no nodes"
+    else
+      current_position = 0
+      current_item = @head
+      while current_position != start_position
+        current_position += 1
+        current_item = current_item.next_node
+      end
+      return_string = current_item.data
+    end
+  end
+
+# current_position = 0
+# loop do
+#   current_position += 1
+#   if current_position == start_position
+#     break
+#   end
+
 end
