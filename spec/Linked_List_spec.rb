@@ -49,6 +49,7 @@ RSpec.describe LinkedList do
     expect(list.head.next_node.next_node.next_node).to eq(nil)
   end
 
+  # The test below verifies that calling the count method will return the number of node elements in the list.
   it 'counts how many nodes are in the list' do
     list = LinkedList.new
     list.append("doop")
@@ -57,6 +58,7 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(2)
   end
 
+  # The test below verifies that calling the to string method will return a string of node elements in the linked list.
   it 'generates a string of elements in the list' do
     list = LinkedList.new
     list.append("doop")
@@ -65,15 +67,17 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("doop deep")
   end
 
+  # The test below verifies that calling the prepend method will create a new node and add it to the beginning of the linked list.
   it 'prepends a node to the front of the list' do
-  list = LinkedList.new
-  list.append("plop")
-  list.append("suu")
-  list.prepend("dop")
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
 
-  expect(list.to_string).to eq("dop plop suu")
+    expect(list.to_string).to eq("dop plop suu")
   end
 
+  # The test below verifies that calling the insert method inserts a node in a given position.
   it 'inserts a node at the given position' do
     list = LinkedList.new
     list.append("plop")
@@ -84,6 +88,7 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("dop woo plop suu")
   end
 
+  # The test below verifies that the insert method is dynamic.
   it 'inserts a node at another given position' do
     list = LinkedList.new
     list.append("plop")
@@ -94,7 +99,8 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("dop plop boo suu")
   end
 
-  it 'finds and returns a number of elements based on the given start position' do
+  # The test below verifies that calling the find method can find and return a number of elements based on a given start position.
+  it 'finds and returns a number of elements based on a start position' do
     list = LinkedList.new
     list.append("deep")
     list.append("woo")
@@ -104,8 +110,9 @@ RSpec.describe LinkedList do
   
     expect(list.find(2,1)).to eq("shi")
   end
-
-  it 'returns a different number of elements based on a different start position' do
+  
+  # The test below verifies that calling the find method is dynamic and can return more than one node at a time.
+  it 'finds and returns a different number of elements based on a different start position' do
     list = LinkedList.new
     list.append("deep")
     list.append("woo")
@@ -114,6 +121,22 @@ RSpec.describe LinkedList do
     list.append("blop")
   
     expect(list.find(1,3)).to eq("woo shi shu")
+  end
+
+  # The test below verifies that calling the includes? method returns true if the supplied value is in the list
+  it 'checks if a given value is included in the list'
+    list = LinkedList.new
+    list.append("deep")
+
+    expect(list.includes?("deep")).to eq(true)
+  end
+
+  # The test below verifies that calling the includes? method returns false if the supplied value is not in the list
+  it 'checks if a given value is included in the list' do
+    list = LinkedList.new
+    list.append("deep")
+
+    expect(list.includes?("dep")).to eq(false)
   end
 
 end
