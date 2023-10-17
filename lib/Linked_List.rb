@@ -10,10 +10,6 @@ class LinkedList
   end
 
   # The method below creates a new node and adds it to the end of the list.
-  # Create a new node
-  # if list.head is empty, assign the new node to the list.head
-  # otherwise, iterate through until you find the node in the list where next_node is empty.
-  # Assign the new item as the next_node.
   def append(data)
     new_item = Node.new(data)
     if @head == nil
